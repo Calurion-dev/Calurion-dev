@@ -8,14 +8,14 @@ Tous mes projets sont ici, avec une démo quand elle est en ligne.
 ## 🏋️ Sport & calisthénie
 
 - **[FitQuest](https://github.com/Calurion-dev/FitQuest)** — RPG de street workout : XP, quêtes, badges, classement et carte des spots. → [Démo](https://calurion-dev.github.io/FitQuest/)
-- **[CaliCoach](https://github.com/Calurion-dev/Calicoach)** — Générateur de programmes de calisthénie / street workout — 100 % local, sans backend ni appel IA externe.
-- **[Calisthenix-Lab](https://github.com/Calurion-dev/Calisthenix-Lab)** — Site vitrine bilingue (FR/EN) de vulgarisation de la calisthénie. Statique, sans framework, sans compte et sans cookie. → [Démo](https://calurion-dev.github.io/Calisthenix-Lab/)
+- **[CaliCoach](https://github.com/Calurion-dev/Calicoach)** — Générateur de programmes de calisthénie (séance, semaine ou cycle de 4 semaines), 100 % local.
+- **[Calisthenix-Lab](https://github.com/Calurion-dev/Calisthenix-Lab)** — Guide FR/EN de calisthénie : bases, méthodes, figures statiques et dynamiques. → [Démo](https://calurion-dev.github.io/Calisthenix-Lab/)
 - **[Workout-Calculator2000](https://github.com/Calurion-dev/Workout-Calculator2000)** — Générateur de séances aléatoires de calisthénie et street workout. → [Démo](https://calurion-dev.github.io/Workout-Calculator2000/)
-- **[Random-Trail](https://github.com/Calurion-dev/Random-Trail)** — Générateur de parcours aléatoires pour vélo (route / VTT) et course à pied (route / trail / montagne / campagne).
+- **[Random-Trail](https://github.com/Calurion-dev/Random-Trail)** — Générateur de parcours aléatoires vélo/course, export GPX/KML et suivi GPS.
 
 ## 🥁 Musique
 
-- **[LearnBatterie](https://github.com/Calurion-dev/site-learnbatterie)** — Site pédagogique gratuit pour apprendre les rudiments de la batterie aux débutants. → [Démo](https://calurion-dev.github.io/site-learnbatterie/)
+- **[LearnBatterie](https://github.com/Calurion-dev/site-learnbatterie)** — Site gratuit pour apprendre la batterie : programme de 12 semaines, 40 rudiments et exercices. → [Démo](https://calurion-dev.github.io/site-learnbatterie/)
 - **[Drum-part](https://github.com/Calurion-dev/Drum-part)** — Logiciel simple pour créer des partitions de batterie.
 
 ## 🛠️ Outils
