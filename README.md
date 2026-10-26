@@ -21,7 +21,6 @@ Tous mes projets sont ici, avec une démo quand elle est en ligne.
 ## 🛠️ Outils
 
 - **[QuickCut](https://github.com/Calurion-dev/QuickCut)** — Coupe la musique automatiquement à l'ouverture de DaVinci Resolve.
-- **OpenMontage** *(code privé)* — Plateforme de production vidéo pilotée par un agent IA : pipelines, outils Python, checkpoints.
 
 ## 🌐 Web & side projects
 
