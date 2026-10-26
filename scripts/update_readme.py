@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Regénère le README de profil depuis les README des dépôts GitHub."""
+import hashlib
 import json
 import os
 import re
@@ -10,6 +11,10 @@ OWNER = "Calurion-dev"
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 README = "README.md"
+
+# shortcut: incrémenter VERSION à la main si le rendu change ; sinon le bot
+# considère qu'il n'y a rien à faire tant qu'aucun dépôt ne bouge.
+VERSION = 1
 
 CATEGORIES = [
     ("sport", "🏋️ Sport & calisthénie"),
@@ -201,19 +206,41 @@ def line(entry):
     return text
 
 
+def fingerprint(data):
+    state = [
+        [r["name"], r["pushed_at"], r.get("description"), r.get("homepage"), r.get("has_pages")]
+        for r in data
+        if r["name"] != OWNER and not r["private"] and not r["fork"] and not r["archived"]
+    ]
+    state.sort()
+    payload = json.dumps([VERSION, state], sort_keys=True).encode()
+    return hashlib.sha256(payload).hexdigest()[:12]
+
+
 def main():
+    data = list(repos())
+    fp = fingerprint(data)
+
+    current = ""
+    if os.path.exists(README):
+        with open(README, encoding="utf-8") as file:
+            current = file.read()
+    if f"<!-- fingerprint: {fp} -->" in current:
+        print("No repo change")
+        return
+
     groups = {}
-    for data in repos():
-        name = data["name"]
-        if name == OWNER or data["private"] or data["fork"] or data["archived"]:
+    for repo in data:
+        name = repo["name"]
+        if name == OWNER or repo["private"] or repo["fork"] or repo["archived"]:
             continue
         md = readme(name)
-        desc = description(name, data, md)
+        desc = description(name, repo, md)
         if not desc:
             continue
         cat = category(name, desc)
         groups.setdefault(cat, []).append(item(
-            name, NAMES.get(name, name), cat, desc, demo(data)
+            name, NAMES.get(name, name), cat, desc, demo(repo)
         ))
 
     parts = [HEADER.rstrip("\n")]
@@ -224,11 +251,7 @@ def main():
         if entries:
             parts.append(f"## {title}\n\n" + "\n".join(line(e) for e in entries))
 
-    output = "\n\n".join(parts).rstrip() + "\n"
-    current = ""
-    if os.path.exists(README):
-        with open(README, encoding="utf-8") as file:
-            current = file.read()
+    output = "\n\n".join(parts).rstrip() + f"\n\n<!-- fingerprint: {fp} -->\n"
     if output != current:
         with open(README, "w", encoding="utf-8", newline="\n") as file:
             file.write(output)
