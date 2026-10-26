@@ -23,8 +23,8 @@ CATEGORIES = [
 ORDER = [
     "FitQuest", "Calicoach", "Calisthenix-Lab", "Workout-Calculator2000", "Random-Trail",
     "site-learnbatterie", "Drum-part",
-    "QuickCut", "Open-montage",
-    "Site-vitrine-menuiserie", "Simubac-2027", "Wiki-Hay-Day", "Footlive",
+    "QuickCut", "Scenopia",
+    "Simubac-2027", "Wiki-Hay-Day", "Footlive",
 ]
 
 CATEGORY = {
@@ -36,8 +36,7 @@ CATEGORY = {
     "site-learnbatterie": "music",
     "Drum-part": "music",
     "QuickCut": "tools",
-    "Open-montage": "tools",
-    "Site-vitrine-menuiserie": "web",
+    "Scenopia": "tools",
     "Simubac-2027": "web",
     "Wiki-Hay-Day": "web",
     "Footlive": "web",
@@ -46,7 +45,7 @@ CATEGORY = {
 KEYWORDS = {
     "sport": ["sport", "workout", "fitness", "calisthen", "gym", "muscu", "trail", "velo", "course", "running", "foot", "basket"],
     "music": ["music", "musique", "drum", "batterie", "piano", "guitare", "guitar", "audio"],
-    "tools": ["tool", "outil", "cli", "script", "bot", "automation", "montage", "video", "cut"],
+    "tools": ["tool", "outil", "cli", "script", "bot", "automation", "montage", "video", "cut", "tournage", "film"],
     "web": ["site", "web", "wiki", "guide", "portfolio", "html", "css"],
 }
 
@@ -55,25 +54,7 @@ NAMES = {
     "site-learnbatterie": "LearnBatterie",
     "Simubac-2027": "Simubac 2027",
     "Wiki-Hay-Day": "Wiki Hay Day",
-    "Open-montage": "OpenMontage",
-    "Site-vitrine-menuiserie": "Confort Bois Habitat",
 }
-
-# Dépôts privés : invisibles via l'API, donc décrits ici.
-PRIVATE = [
-    {
-        "repo": "Open-montage",
-        "name": "OpenMontage",
-        "category": "tools",
-        "description": "Plateforme de production vidéo pilotée par un agent IA : pipelines, outils Python, checkpoints.",
-    },
-    {
-        "repo": "Site-vitrine-menuiserie",
-        "name": "Confort Bois Habitat",
-        "category": "web",
-        "description": "Site vitrine pour un menuisier du Rhône.",
-    },
-]
 
 # Dépôts sans README exploitable.
 OVERRIDES = {
@@ -201,23 +182,19 @@ def demo(data):
     return ""
 
 
-def item(repo_name, name, cat, desc, link, is_private):
+def item(repo_name, name, cat, desc, link):
     return {
         "repo": repo_name,
         "name": name,
         "category": cat,
         "desc": desc,
         "link": link,
-        "private": is_private,
         "order": ORDER.index(repo_name) if repo_name in ORDER else len(ORDER),
     }
 
 
 def line(entry):
-    if entry["private"]:
-        title = f"**{entry['name']}** *(code privé)*"
-    else:
-        title = f"**[{entry['name']}](https://github.com/{OWNER}/{entry['repo']})**"
+    title = f"**[{entry['name']}](https://github.com/{OWNER}/{entry['repo']})**"
     text = f"- {title} — {entry['desc']}"
     if entry["link"]:
         text += f" → [Démo]({entry['link']})"
@@ -236,16 +213,7 @@ def main():
             continue
         cat = category(name, desc)
         groups.setdefault(cat, []).append(item(
-            name, NAMES.get(name, name), cat, desc, demo(data), False
-        ))
-
-    known = {entry["repo"] for entries in groups.values() for entry in entries}
-    for extra in PRIVATE:
-        if extra["repo"] in known:
-            continue
-        groups.setdefault(extra["category"], []).append(item(
-            extra["repo"], extra["name"], extra["category"],
-            extra["description"], "", True
+            name, NAMES.get(name, name), cat, desc, demo(data)
         ))
 
     parts = [HEADER.rstrip("\n")]

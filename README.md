@@ -21,14 +21,10 @@ Tous mes projets sont ici, avec une démo quand elle est en ligne.
 ## 🛠️ Outils
 
 - **[QuickCut](https://github.com/Calurion-dev/QuickCut)** — Coupe la musique automatiquement à l'ouverture de DaVinci Resolve.
+- **[Scenopia](https://github.com/Calurion-dev/Scenopia)** — Le second cerveau du tournage. → [Démo](https://calurion-dev.github.io/Scenopia/)
 
 ## 🌐 Web & side projects
 
-- **Confort Bois Habitat** *(code privé)* — Site vitrine pour un menuisier du Rhône.
 - **[Simubac 2027](https://github.com/Calurion-dev/Simubac-2027)** — Simulateur de notes pour le bac. → [Démo](https://calurion-dev.github.io/Simubac-2027/)
 - **[Wiki Hay Day](https://github.com/Calurion-dev/Wiki-Hay-Day)** — Guide complet du jeu Hay Day. → [Démo](https://calurion-dev.github.io/Wiki-Hay-Day/)
 - **[Footlive](https://github.com/Calurion-dev/Footlive)** — Prototype d'app Expo de scores de foot en direct (inachevé).
-
-## 📦 Autres projets
-
-- **[Scenopia](https://github.com/Calurion-dev/Scenopia)** — Le second cerveau du tournage. → [Démo](https://calurion-dev.github.io/Scenopia/)
