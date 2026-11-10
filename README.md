@@ -12,6 +12,7 @@ Tous mes projets sont ici, avec une démo quand elle est en ligne.
 - **[Calisthenix-Lab](https://github.com/Calurion-dev/Calisthenix-Lab)** — Site vitrine bilingue (FR/EN) de vulgarisation de la calisthénie. Statique, sans framework, sans compte et sans cookie. → [Démo](https://calurion-dev.github.io/Calisthenix-Lab/)
 - **[Workout-Calculator2000](https://github.com/Calurion-dev/Workout-Calculator2000)** — Générateur de séances aléatoires de calisthénie et street workout. → [Démo](https://calurion-dev.github.io/Workout-Calculator2000/)
 - **[Random-Trail](https://github.com/Calurion-dev/Random-Trail)** — Générateur de parcours aléatoires pour vélo (route / VTT) et course à pied (route / trail / montagne / campagne).
+- **[Sport-1000](https://github.com/Calurion-dev/Sport-1000)** — Suivi d'entraînement quotidien, pensé pour le téléphone. Le site affiche uniquement la colonne du jour de mon programme, avec une case à cocher par exercice. → [Démo](https://calurion-dev.github.io/Sport-1000/)
 
 ## 🥁 Musique
 
@@ -29,4 +30,4 @@ Tous mes projets sont ici, avec une démo quand elle est en ligne.
 - **[Wiki Hay Day](https://github.com/Calurion-dev/Wiki-Hay-Day)** — Guide complet du jeu Hay Day. → [Démo](https://calurion-dev.github.io/Wiki-Hay-Day/)
 - **[Footlive](https://github.com/Calurion-dev/Footlive)** — Prototype d'app Expo de scores de foot en direct (inachevé).
 
-<!-- fingerprint: 1f3a722adee0 -->
+<!-- fingerprint: 01c5bc4fad23 -->
